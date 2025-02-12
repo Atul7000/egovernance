@@ -56,22 +56,4 @@ class ApiController extends Controller
         return response()->json($student);
     }
 
-    
-    /**
-     * Show student data in the table
-     *
-     * @param  mixed $id
-     * @return void
-     */
-    public function getStudentDataTable($id)
-    {
-        // Fetch student data with related records (if any)
-        $student = Student::with('percentages')->find($id);
-
-        if (!$student) {
-            return response()->json(['error' => 'Student not found'], 404);
-        }
-
-        return response()->json(['data'=>$student]);
-    }
 }

@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+# Task 2 Routes
+
 Route::middleware('auth:api')->get('/student/{id}', [ApiController::class, 'getStudentData']);
 Route::post('/login', [ApiController::class, 'login'])->name('login');
 Route::post('/logout', [ApiController::class, 'logout'])->name('logout');
-
-Route::get('/student/{id}', [ApiController::class, 'getStudentDataTable']);

@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+# Task 1 Routes
+
 Route::get('/register', [AuthController::class, 'registerView']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'loginView']);
@@ -37,6 +39,8 @@ Route::middleware(['auth', 'role:teacher'])->group(function () {
     Route::get('/teacher/students', [TeacherController::class, 'index']);
     Route::get('/teacher/student/{id}', [TeacherController::class, 'show']);
 });
+
+# Task 3 Routes 
 
 Route::get('/calculate-years', [DateController::class, 'showForm']);
 Route::post('/calculate-years', [DateController::class, 'calculateYears']);
